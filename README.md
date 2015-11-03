@@ -1,6 +1,7 @@
 # plantilla-spring-boot
 Plantilla con Spring boot noviembre 2015
-``
+## Lo primero es en el pom.xml agregar las siguientes dependencias
+```
 <dependencyManagement>
         <dependencies>
             <dependency>
@@ -31,4 +32,4 @@ Plantilla con Spring boot noviembre 2015
             </resource>
         </resources>
     </build>
-``
+```
