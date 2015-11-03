@@ -1,6 +1,7 @@
 # plantilla-spring-boot
 Plantilla con Spring boot noviembre 2015
-## Lo primero es en el pom.xml agregar las siguientes dependencias antes del cierre de la etiqueta ```</project>```
+## Configuarcion inicial de las dependencias 
+ Lo primero es en el **pom.xml** agregar las siguientes dependencias antes del cierre de la etiqueta ```</project>```
 ```
 <dependencyManagement>
         <dependencies>
