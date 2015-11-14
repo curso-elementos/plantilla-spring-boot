@@ -1,0 +1,19 @@
+PROBLEMA
+Se desea hacer una aplicacion que lea el contenido del servidor
+guardado dentro de la estructura del mismo.
+Inicialmente se desea leer el contenido de un String de una clase JAVA,
+despues de un archivo  de texto
+pero en el futuro se desea que ese archivo este contenido en 
+una table de mysql que se llame información que posea su primary key
+y un campo que se llame "mensaje" que contenga la información a ser
+leida.
+
+Genere la solución del problema, de tal manera que:
+SU SOLUCIÓN PUEDA LEER DESDE EL CLIENTE YA SEA AL ARCHIVO DE TEXTO 
+O BIEN, A LA BASE DE DATOS, SIN QUE EL CLIENTE SE ENTERE DE QUE ES
+LO QUE SE ESTA LEYENDO.
+NOTA: NO INTENES USAR  IF-ELSE, NI NADA PARECIDO PORQUE MAS A FUTURO SE PIENSA
+LEER LA INFORMACIÓN DE UNA RCHIVO SERIALIZADO Y ADEMAS DE UNA BASE DE 
+DATOS MONGODB.
+
+Empezaremos con las clases DAOInformacion, MiMensaje y MiArchivoTexto
