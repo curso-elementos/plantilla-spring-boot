@@ -5,11 +5,13 @@
     <artifactId>plantilla-spring-boot</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.7</maven.compiler.source>
-        <maven.compiler.target>1.7</maven.compiler.target>
-    </properties>
+   <parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.2.7.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+
    <dependencyManagement>
         <dependencies>
             <dependency>
@@ -57,6 +59,15 @@
     <version>SNAPSHOT</version>
   </dependency>
 </dependencies>
+
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.8</java.version>
+	</properties>
+
+
+
     <build>
         <resources>
             <resource>
@@ -69,6 +80,12 @@
                 </includes>
             </resource>
         </resources>
+        <plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
     </build>
   <repositories>
     <repository>
@@ -77,4 +94,7 @@
       <url>file:${project.basedir}/lib</url>
     </repository>
   </repositories>
+
 </project>
+
+
