@@ -5,9 +5,11 @@
  */
 package org.campitos;
 
+import java.util.ArrayList;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Component;
 
 /**
@@ -32,6 +34,20 @@ public class DAOCliente {
     public void guardar(Cliente reservacion)throws Exception{
         session.save(reservacion);
         cerrarTodo();
+    }
+
+    ArrayList<Cliente> buscarTodos() throws Exception{
+  ArrayList<Cliente>clientes=  (ArrayList<Cliente>) session.createCriteria(Cliente.class).list();
+  cerrarTodo();
+  
+    return clientes;
+    }
+    
+    Cliente actualizar(Cliente c)throws Exception{
+        
+         c=(Cliente) session.createCriteria(Cliente.class).add(Restrictions.idEq(c.getIdCliente())).uniqueResult();
+         
+         return c;
     }
     
 }   

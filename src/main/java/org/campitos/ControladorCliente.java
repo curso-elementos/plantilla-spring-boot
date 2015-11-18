@@ -45,15 +45,18 @@ public class ControladorCliente {
      return maper.writeValueAsString(clientes);
  }
  
- @RequestMapping(value="/cliente/{id}",
+ @RequestMapping(value="/cliente/{nombre}/{paterno}/{email}",
          method=RequestMethod.PUT,headers={"Accept=text/html"})
- @ResponseBody String actualizarPorId(@PathVariable Integer id)throws Exception{
+ @ResponseBody String actualizar(@PathVariable String nombre,
+         @PathVariable String paterno, @PathVariable String email)throws Exception{
      //Invocamos al DAOGUardar y su respectivo objeto
-       DAOCliente daoc=new DAOCliente();
+     DAOCliente daoc=new DAOCliente();
+     Cliente c=new Cliente(nombre, paterno, email);
+     daoc.actualizar(c);
      
-       dao.actualizar(id);
-      return "Registro actulizado con exito";
+     return "Cliente guardado con exito";
  }
+ 
     
     
 }
