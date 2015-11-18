@@ -1,18 +1,21 @@
 <html>
   <head>
     <title>Angulariesito</title>
-    <script src="https://code.angularjs.org/tools/system.js"></script>
-    <script src="https://code.angularjs.org/tools/typescript.js"></script>
-    <script src="https://code.angularjs.org/2.0.0-alpha.44/angular2.dev.js"></script>
+    <script src="node_modules/angular/angular.js"></script>
+    
     <script>
-      System.config({
-        transpiler: 'typescript',
-        typescriptOptions: { emitDecoratorMetadata: true }
-      });
-      System.import('./app.ts');
+     angular.module('appPrincipal',[])
+             .controller('controlador1',function($scope, $http){
+              $http.post('/cliente/juan/campitos/rapidclimate@outlook.com') .success(function(data){
+                  console.log(data);
+              })  ;
+     });
     </script>
   </head>
-  <body>
-    <my-app>Cargando...</my-app>
+  <body ng-app="appPrincipal">
+      <div ng-controller="controlador1">
+          
+      </div>
+   Aplicacionsita
   </body>
 </html>
